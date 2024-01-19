@@ -6,7 +6,7 @@ def main():
     print(int(e))
 
 def energy(m):
-    e = m * c**2 #or e = m * c*c
+    e = m * c**2
     return e
 
 main()
