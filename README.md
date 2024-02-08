@@ -1,6 +1,6 @@
 # CS50's Introduction to Programming with Python
 [![Certificate](https://github.com/mhanzalayousaf/CS50P/assets/139219974/5cdb2a86-a152-465b-8fee-7491e036efeb)](https://cs50.harvard.edu/certificates/8fe3e14d-20c3-41eb-87da-f8fb846b2ff4.png?size=letter)
-### My Solution for the Harvard CS50's Introduction to Programming with Python
+## My Solution for the Harvard CS50's Introduction to Programming with Python
 ### Final Project: [Simple Calculator](https://github.com/mhanzalayousaf/CS50P/tree/main/Simple%20Calculator)
 <br/>
 
