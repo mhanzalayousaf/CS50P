@@ -71,3 +71,7 @@
 - [Seasons of Love](/Week%208/seasons/)
 - [Cookie Jar](/Week%208/jar/)
 - [CS50 Shirtificate](/Week%208/shirtificate/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
