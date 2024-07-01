@@ -1,34 +1,34 @@
-import sys
 import csv
+import sys
 
 
 def main():
     check_command_line_arg()
-    output = []
+    new_students_format = list()
 
     try:
-        with open(sys.argv[1], "r") as csvfile:
-            reader = csv.DictReader(csvfile)
+        with open(sys.argv[1]) as file:
+            reader = csv.DictReader(file)
             for row in reader:
-                last_name, first_name = row["name"].split(",")
-                output.append(
+                last, first = row["name"].split(",")
+                house = row["house"]
+                new_students_format.append(
                     {
-                        "first": first_name.lstrip(),
-                        "last": last_name,
-                        "house": row["house"],
+                        "first": first.lstrip(),
+                        "last": last,
+                        "house": house
                     }
                 )
 
+        with open(sys.argv[2], "w", newline='') as file:
+            writer = csv.DictWriter(
+                file, fieldnames=["first", "last", "house"]
+            )
+            writer.writeheader()
+            writer.writerows(new_students_format)
+
     except FileNotFoundError:
         sys.exit(f"Could not read {sys.argv[1]}")
-
-    with open(sys.argv[2], "w") as file:
-        writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
-        writer.writerow({"first": "first", "last": "last", "house": "house"})
-        for row in output:
-            writer.writerow(
-                {"first": row["first"], "last": row["last"], "house": row["house"]}
-            )
 
 
 def check_command_line_arg():
@@ -36,7 +36,7 @@ def check_command_line_arg():
         sys.exit("Too few command-line arguments")
     if len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
-    if ".csv" not in sys.argv[1] or ".csv" not in sys.argv[2]:
+    if not sys.argv[1].endswith(".csv") or not sys.argv[1].endswith(".csv"):
         sys.exit("File is not CSV")
 
 
